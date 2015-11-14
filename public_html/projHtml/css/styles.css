@@ -1,0 +1,138 @@
+/* -----------------------------
+Styles du Portfolio d'Amy MacAdams
+Tables des matières
+
+- Contenu général
+- Typographie
+- Entête et navigation
+- Images et médias
+- Pied de page (footer)
+- Media queries
+*/
+
+/* Contenu général
+--------------------------------------------------- */
+.bio{
+  background-color: #7accc8;
+  margin-top:4%;
+  padding:3% 0 2% 0;
+}
+
+.jourSem0 {
+background-color: #eee;
+}
+
+.jourSem6 {
+background-color: #eee;
+}
+
+/* Typographie
+--------------------------------------------------- */
+body {
+  font-family: 'Abel', sans-serif;
+  font-size:1.5em;
+  color:#666;
+}
+
+a{
+  /* color:#666 !important; */
+      /* le !important empeche l'ecrasement de la propriete */
+   color:#666;
+}
+
+.bio h2 { /* tag h2 dans classe bio */
+  font-family: 'Satisfy', cursive;
+  color: #3F7F7C;
+  text-align:center;
+  }
+
+
+/* Entête et navigation
+--------------------------------------------------- */
+header{
+  background-color: #7accc8;
+  text-align: center;
+  padding:5%;
+  margin-bottom:4%;
+}
+
+#logo{
+	font-size:3em;
+	margin:0 auto; /* 0 : marge de haut et bas, auto : marge de gauche et droite */
+}
+#logo a{
+	border: 2px #fff solid;
+  padding:2px 10px;
+  text-decoration:none;
+  text-transform:uppercase;
+  color:#fff;
+  border-radius:20%;
+}
+#logo a:hover{
+  background-color:white;
+  color:#7accc8;
+}
+
+#titre_mois {
+  font-size: 3em;
+}
+
+/* Images et medias
+-------------------------------------------------*/
+img {
+  max-width :100%;
+}
+img.amy{
+  border-radius:100%;
+}
+
+.portfolio img:hover{opacity:0.8;}
+/* Pied de page (footer)
+-------------------------------------------------*/
+footer{
+  color:#666;
+  text-align:center;
+}
+ul.social{
+  text-align: center;
+}
+
+ul.social li{
+  display:inline;
+  font-size:3.5em;
+  padding:0 2%;
+}
+/*
+ul.social li a{
+  color:#666;  gris
+} */
+
+ul.social li.facebook a:hover{color:rgb(59,89,152);}
+ul.social li.twitter a:hover{color:rgb(0,172,237);}
+ul.social li.instagram a:hover{color:rgb(80,121,237);}
+ul.social li.flickr a:hover{color:rgb(255,0,132);}
+ul.social li.youtube a:hover{color:rgb(187,0,0);}
+ul.social li.linkedin a:hover{color:rgb(0,123,182);}
+
+/* Media queries
+-------------------------------------------------*/
+@media (max-width: 479px) {
+/* largeur d'affichage correspondant à des tablettes ou smartphone
+on réduit l'affichage en conséquence */
+/*
+  img{
+  border:2px red dotted;
+  }
+*/
+#logo a{
+    font-size:1em;
+  }
+
+ul.social li{
+  font-size:2.5em;
+}
+
+.portfolio img{
+    margin-bottom:5%;
+  }
+}

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <title> Programme de formation </title>
+  <meta description="Programme de formation POEC JAVA">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width"/>
+  <!-- feuille de style -->
+  <!-- l'ordre est important,
+       le dernier peut cacher des definitions precedentes -->
+  <link rel="stylesheet" href="css/normalize.css"/>
+  <link rel="stylesheet" href="css/skeleton.css"/>
+  <link rel="stylesheet" href="css/font-awesome.css"/>
+  <!-- copie a partir du site dimsemenov.com -->
+  <link rel="stylesheet" href="css/magnific-popup.css"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+
+
+<!-- fonts google -->
+<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+<!-- Font awesome -->
+
+<!-- favicon -->
+<link rel="icon" href="images/favicon.ico">
+
+<!-- script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/magnific-popup.js"></script>
+<script type="text/javascript" src="js/programme_poec.js"></script>
+<script type="text/javascript" src="js/cree_mois.js"></script>
+
+</head>
+<body>
+  <header>
+    <div id="logo"><a href="./index.html">Formation Java JEE</a></div>
+  </header>
+  <div class="container div_choix_date">
+    <div class="row">
+        <div class="twelve columns">
+          <select id="mois">
+            <option value=9 select="selected">Septembre 2015</option>
+            <option value=10>Octobre 2015</option>
+            <option value=11>Novembre 2015</option>
+            <option value=12>Décembre 2015</option>
+          </select>
+        </div>
+        <div class="ten columns">
+          <p id="debug" hidden>
+            Zone de debug :<br>
+          </p>
+        </div>
+    </div>
+  </div> <!-- container div_choix_date" -->
+  <div>
+<div class="container div_mois">
+  <div class="row">
+    <div class="twelve columns">
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <!--<th></th>
+            <th></th>-->
+            <th id="titre_mois" colspan=4 style="text-align:center">Mois 2015</th>
+            <!--<th></th>-->
+          </tr>
+        </thead>
+        <tbody id="tab_mois">
+          <!--
+          <tr>
+            <td>D</td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>L</td>
+            <td>2</td>
+            <td>Java Jee</td>
+            <td>Renaud</td>
+          </tr>
+        -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> <!-- container div_mois" -->
+
+
+  <div class="row bio">
+    <div class="container">
+      <div class="two columns">
+        <img class="amy" src="images/java.png" alt="java.png">
+        <img class="amy" src="images/logo_html5.png" alt="logo_html5.png">
+        <img class="amy" src="images/tomcat.png" alt="tomcat.png">
+        <img class="amy" src="images/java_ee_logo_hori_v2.png" alt="java_jee">
+      </div>
+      <div class="eight columns">
+        <h2> About Formation Java JEE</h2>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut velit dignissim, placerat lorem quis, luctus lectus. Vivamus eu velit est. Nam imperdiet tortor id felis porttitor volutpat. Sed posuere pharetra elementum. Cras elit ipsum, congue id ornare sed, vestibulum in dolor. Nulla sed orci sed lectus blandit volutpat nec eget ex. Nunc tempus eros quis ex vulputate, at rhoncus enim aliquet. Curabitur convallis posuere purus, nec iaculis dolor mollis non. Proin porttitor erat lectus, sit amet sagittis ex euismod in. Aliquam lorem ipsum, semper at orci in, imperdiet consectetur lorem. Integer vulputate quam at nulla convallis condimentum. Vestibulum a tincidunt arcu, ut pellentesque neque.
+      </div>
+    </div> <!-- fin container bandeau amy -->
+  </div>
+
+  <footer>
+  <div class="container">
+  <div class="row">
+    <div class="twelve columns">
+      <ul class="social">
+        <li class="linkedin"><a href="https://www.linkedin.com/profile/view?id=ADEAAAxSLesBP__hfd2ZPmNkRg81BFCZY6uPRPw&authType=NAME_SEARCH&authToken=-ow8&locale=fr_FR&srchid=2067122991446384496007&srchindex=1&srchtotal=1&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A2067122991446384496007%2CVSRPtargetId%3A206712299%2CVSRPcmpt%3Aprimary%2CVSRPnm%3Atrue%2CauthType%3ANAME_SEARCH"><i class="fa fa-linkedin-square "></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="twelve rows">
+<p>&#9400; 2015 Christine Lang. Programme de formation. All rights reserved.</p>
+    </div>
+  </div>
+</div> <!-- fin container icones -->
+</footer>
+<script type="text/javascript">
+$(document).ready(function(){
+
+$('#debug').hide();
+
+//  $('.image-link').magnificPopup({type:'image'});
+// Initialize popup as usual
+$('.image-link').magnificPopup({
+  type: 'image',
+  mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+
+  zoom: {
+    enabled: true, // By default it's false, so don't forget to enable it
+
+    duration: 300, // duration of the effect, in milliseconds
+    easing: 'ease-in-out', // CSS transition easing function
+
+    // The "opener" function should return the element from which popup will be zoomed in
+    // and to which popup will be scaled down
+    // By defailt it looks for an image tag:
+    opener: function(openerElement) {
+      // openerElement is the element on which popup was initialized, in this case its <a> tag
+      // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+      return openerElement.is('img') ? openerElement : openerElement.find('img');
+    }
+  }
+
+});
+
+  // action changment de mois
+  $('#mois').change (function() {
+    //$('#titre_mois').text($("#mois option:selected").text());
+    affiche_mois();
+  });
+
+var date = new Date();
+var moisCourant = date.getMonth();
+//alert ("moisCourant" + moisCourant);
+  // initialisation
+  $('#mois').val(moisCourant+1);
+	affiche_mois();
+  //$('#titre_mois').text($("#mois option:selected").text());
+  });
+</script>
+</body>
+</html>
