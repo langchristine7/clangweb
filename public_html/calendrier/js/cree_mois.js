@@ -9,6 +9,14 @@ function getJourFr(indice) {
 		return jours[indice];
 }
 
+// affichage de la liste des mois
+function afficheListeMois() {
+	for (i = 1 ; i++ ; i <= 12)
+	{
+		$('#mois').append ('<option value=' + i + '>' + i + '2015</option>');
+	}
+}
+
 function affiche_mois() {
 	$('#titre_mois').text($("#mois option:selected").text());
    var mois = $('#mois').val();
