@@ -5,12 +5,11 @@
   <meta description="Calendrier online">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width"/>
-  <!-- feuille de style -->
-  <!-- l'ordre est important,
-       le dernier peut cacher des definitions precedentes -->
+
   <link rel="stylesheet" href="css/normalize.css"/>
   <link rel="stylesheet" href="css/skeleton.css"/>
   <link rel="stylesheet" href="css/font-awesome.css"/>
+
   <!-- copie a partir du site dimsemenov.com -->
   <link rel="stylesheet" href="css/magnific-popup.css"/>
   <link rel="stylesheet" href="css/styles.css"/>
@@ -35,10 +34,11 @@
   <header>
     <div id="logo"><a href="./index.html">Calendrier</a></div>
   </header>
+  <div ng-controller="ctrlMois">
   <div class="container div_choix_date">
     <div class="row">
         <div class="twelve columns">
-          <select id="mois">
+          <select ng-model="slctMois">
             <option value=9 select="selected">Septembre 2015</option>
             <option value=10>Octobre 2015</option>
             <option value=11>Novembre 2015</option>
@@ -96,38 +96,64 @@
         <img class="amy" src="images/java_ee_logo_hori_v2.png" alt="java_jee">
       </div>
       <div class="eight columns">
-        <h2> About Formation Java JEE</h2>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut velit dignissim, placerat lorem quis, luctus lectus. Vivamus eu velit est. Nam imperdiet tortor id felis porttitor volutpat. Sed posuere pharetra elementum. Cras elit ipsum, congue id ornare sed, vestibulum in dolor. Nulla sed orci sed lectus blandit volutpat nec eget ex. Nunc tempus eros quis ex vulputate, at rhoncus enim aliquet. Curabitur convallis posuere purus, nec iaculis dolor mollis non. Proin porttitor erat lectus, sit amet sagittis ex euismod in. Aliquam lorem ipsum, semper at orci in, imperdiet consectetur lorem. Integer vulputate quam at nulla convallis condimentum. Vestibulum a tincidunt arcu, ut pellentesque neque.
+        <h2> About Calendrier</h2>
+        <p> Informations calendrier
       </div>
     </div> <!-- fin container bandeau amy -->
   </div>
-
+</div> <!-- fin du controller ctrlMois -->
   <footer>
   <div class="container">
   <div class="row">
     <div class="twelve columns">
       <ul class="social">
-        <li class="linkedin"><a href="https://www.linkedin.com/profile/view?id=ADEAAAxSLesBP__hfd2ZPmNkRg81BFCZY6uPRPw&authType=NAME_SEARCH&authToken=-ow8&locale=fr_FR&srchid=2067122991446384496007&srchindex=1&srchtotal=1&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A2067122991446384496007%2CVSRPtargetId%3A206712299%2CVSRPcmpt%3Aprimary%2CVSRPnm%3Atrue%2CauthType%3ANAME_SEARCH"><i class="fa fa-linkedin-square "></i></a></li>
+        <li class="linkedin"><a href="https://www.linkedin.com"><i class="fa fa-linkedin-square "></i></a></li>
       </ul>
     </div>
   </div>
   <div class="row">
     <div class="twelve rows">
-<p>&#9400; 2015 Christine Lang. Programme de formation. All rights reserved.</p>
+<p>&#9400; 2015 Christine Lang. Calendrier. All rights reserved.</p>
     </div>
   </div>
 </div> <!-- fin container icones -->
 </footer>
 <script>
-<script src="js/lib/angular.min.js"></script>
- var app = angular.module('calendrierApp', []);
 
+<script src="js/lib/angular.min.js"></script>
+<script src-"js/calendrier.js"></script>
+
+var tabMois = {
+   {"noMois","nomMois"}
+   {1, "Janvier"},
+   {2, "Février"},
+   {3, "Mars"},
+   {4, "Avril"},
+   {5, "Mai"},
+   {6, "Juin"},
+   {7, "Juillet"},
+   {8, "Aout"},
+   {9, "Septembre"},
+   {10, "Octobre"},
+   {11, "Novembre"},
+   {12, "Décembre"}
+}
+
+ var app = angular.module('calendrierApp', []);
+ app.controller('ctrlMois',['$scope', function($scope){
+ $scope.operation = function(operation) {
+   $scope.resultat=$scope.txtOperande;
+   $scope.txtOperande = '';
+   $scope.ope = operation;
+   console.log ("operation : " + $scope.ope);
+ }
+ }]);
 
 </script>
 
 <script type="text/javascript">
 
-/*s
+/*
 $(document).ready(function(){
 
 $('#debug').hide();
